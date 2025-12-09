@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Valuation History</title>
+</head>
+<body>
+<h2>Valuation History</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Vehicle ID</th>
+        <th>Viewed At</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${history}">
+        <td th:text="${item.vehicle.vehicleId}"></td>
+        <td th:text="${#temporals.format(item.searchedAt, 'yyyy-MM-dd HH:mm')}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

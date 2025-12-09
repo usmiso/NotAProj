@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Valuation Input</title>
+</head>
+<body>
+<h2>Valuation Inputs</h2>
+<div>
+    <p th:text="'Vehicle: ' + ${vehicle.make} + ' ' + ${vehicle.model} + ' (' + ${vehicle.year} + ')'">Vehicle details</p>
+</div>
+<form th:action="@{'/valuation/' + ${vehicle.vehicleId}}" method="post">
+    <label>Mileage: <input type="number" name="mileage" th:value="${vehicle.mileage}" /></label><br/>
+    <label>Number of Owners: <input type="number" name="owners" min="1" /></label><br/>
+    <label><input type="checkbox" name="accidents" /> Accident history</label><br/>
+    <label><input type="checkbox" name="roadworthy" checked /> Roadworthy pass</label><br/>
+    <label><input type="checkbox" name="tiresWorn" /> Tires worn</label><br/>
+    <label><input type="checkbox" name="suspension" /> Suspension issues</label><br/>
+    <button type="submit">Calculate Valuation</button>
+</form>
+</body>
+</html>

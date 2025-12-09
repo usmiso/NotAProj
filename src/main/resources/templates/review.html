@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Review Extracted Data</title>
+</head>
+<body>
+<h2>Review Extracted Data</h2>
+<div>
+    <p th:text="'Make: ' + ${vehicle.make}"></p>
+    <p th:text="'Model: ' + ${vehicle.model}"></p>
+    <p th:text="'Year: ' + ${vehicle.year}"></p>
+    <p th:text="'Mileage: ' + ${vehicle.mileage}"></p>
+</div>
+<a th:href="@{'/valuation/' + ${vehicle.vehicleId}}">Proceed to Valuation</a>
+</body>
+</html>
