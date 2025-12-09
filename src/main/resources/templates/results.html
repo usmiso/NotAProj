@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Valuation Results</title>
+</head>
+<body>
+<h2>Valuation Results</h2>
+<div th:if="${valuation}">
+    <p th:text="'Estimated Value: ' + ${valuation.estimatedValue}"></p>
+    <p th:text="'Confidence: ' + ${valuation.confidenceScore} + '%'">Confidence</p>
+    <pre th:text="${valuation.valuationBreakdown}"></pre>
+</div>
+<div th:if="${vehicle}">
+    <p th:text="'Vehicle: ' + ${vehicle.make} + ' ' + ${vehicle.model} + ' (' + ${vehicle.year} + ')'">Vehicle</p>
+</div>
+<a href="/upload">Start New Valuation</a>
+</body>
+</html>
